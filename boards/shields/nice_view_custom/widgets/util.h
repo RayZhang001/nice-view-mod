@@ -26,6 +26,7 @@ struct status_state {
     uint8_t layer_index;
     const char *layer_label;
     uint8_t wpm[10];
+    uint8_t modifiers;  // Modifier state field is here
 #else
     bool connected;
 #endif
@@ -38,6 +39,15 @@ struct battery_status_state {
 #endif
 };
 
+struct modifier_symbol {    
+    uint8_t modifier;
+    const lv_img_dsc_t *symbol_dsc;
+    bool is_active;
+};
+
+extern struct modifier_symbol *modifier_symbols[];
+extern const size_t NUM_SYMBOLS;
+
 void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]);
 void draw_battery(lv_obj_t *canvas, const struct status_state *state);
 void init_label_dsc(lv_draw_label_dsc_t *label_dsc, lv_color_t color, const lv_font_t *font,
@@ -45,3 +55,4 @@ void init_label_dsc(lv_draw_label_dsc_t *label_dsc, lv_color_t color, const lv_f
 void init_rect_dsc(lv_draw_rect_dsc_t *rect_dsc, lv_color_t bg_color);
 void init_line_dsc(lv_draw_line_dsc_t *line_dsc, lv_color_t color, uint8_t width);
 void init_arc_dsc(lv_draw_arc_dsc_t *arc_dsc, lv_color_t color, uint8_t width);
+void draw_modifiers(lv_obj_t *canvas, int x, int y);
