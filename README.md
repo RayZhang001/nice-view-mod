@@ -1,6 +1,11 @@
-# nice-view-mod with Bongo Cat, including FURIOUS MODE
+# nice-view-mod
 
-This is a copy of the nice!view shield from the official ZMK firmware as a ZMK module that changes the shields to include a bongo cat animation on the main board, and allows for new artwork on the peripheral board.
+## Preview
+<img src="assets/bongocat.gif" width="68px"  style="max-width: 68px; top:100px"/> 
+<img src="assets/bongocat_.gif" height="68px" />
+
+## Overview
+A copy of the nice!view shield from the official ZMK firmware as a ZMK module for the purposes of easily customizing.
 As provided, it should function exactly like the current nice!view shield present in the ZMK firmware.
 
 Bongo Cat starts off slowly when you are typing slowly, animating on each keypress and key release. But when you really get going, Bongo Cat goes into FURIOUS mode, just banging away on the keys, and then when you slow down/stop, Bongo Cat rests.
